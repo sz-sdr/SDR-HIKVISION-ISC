@@ -1,0 +1,103 @@
+获取根节点
+
+http://192.168.10.10:9066/transpond?iscPath=/api/resource/v1/regions/root&jsonBody=%7B%7D
+
+{
+    "code": "0",
+    "msg": "success",
+    "data": {
+        "indexCode": "083b2031c1db4f368f015fe2562e0012",
+        "name": "全国",
+        "parentIndexCode": "-1",
+        "treeCode": "0"
+    }
+}
+
+
+
+获取区域
+http://192.168.10.10:9066/transpond?iscPath=/api/irds/v2/region/nodesByParams&jsonBody=%7B%22resourceType%22%3A%22region%22%2C%22parentIndexCodes%22%3A%5B%22root000000%22%5D%2C%22pageNo%22%3A1%2C%22pageSize%22%3A1000%7D
+
+{
+    "code": "0",
+    "msg": "SUCCESS",
+    "data": {
+        "total": 18,
+        "pageNo": 2,
+        "pageSize": 3,
+        "list": [
+            {
+                "indexCode": "root000000",
+                "name": "根节点",
+                "regionPath": "@root000000@",
+                "parentIndexCode": "-1",
+                "available": true,
+                "leaf": true,
+                "cascadeCode": "0",
+                "cascadeType": 1,
+                "catalogType": 1,
+                "externalIndexCode": "11010508582160000029",
+                "sort": 1,
+                "createTime": "2019-06-11T16:49:11.114+08:00",
+                "updateTime": "2019-06-11T16:49:11.114+08:00"
+            }
+        ]
+    }
+}
+
+
+
+获取摄像头
+http://192.168.10.10:9066/transpond?iscPath=/api/resource/v1/camera/advance/cameraList&jsonBody=%7B%22pageNo%22%3A1%2C%22pageSize%22%3A1000%2C%22regionIndexCode%22%3A%22root000000%22%7D
+
+
+{
+    "code": "0",
+    "msg": "SUCCESS",
+    "data": {
+        "total": 1,
+        "pageNo": 1,
+        "pageSize": 1000,
+        "list": [
+            {
+                "altitude": null,
+                "cameraIndexCode": "5cb6f24e383b4c0e820c38a5596eac44",
+                "cameraName": "测试球机",
+                "cameraType": 2,
+                "cameraTypeName": "快球",
+                "capabilitySet": "event_audio,io,event_veh_compare,event_veh,event_veh_recognition,event_ias,record,vss,ptz,event_io,net,maintenance,event_device,status",
+                "capabilitySetName": null,
+                "intelligentSet": null,
+                "intelligentSetName": null,
+                "channelNo": "33",
+                "channelType": "digital",
+                "channelTypeName": "数字通道",
+                "createTime": "2020-02-06T09:30:10.949+08:00",
+                "encodeDevIndexCode": "4ae349d5cfe8430d81a24a511451f398",
+                "encodeDevResourceType": null,
+                "encodeDevResourceTypeName": null,
+                "gbIndexCode": null,
+                "installLocation": null,
+                "keyBoardCode": null,
+                "latitude": null,
+                "longitude": null,
+                "pixel": null,
+                "ptz": null,
+                "ptzName": null,
+                "ptzController": null,
+                "ptzControllerName": null,
+                "recordLocation": null,
+                "recordLocationName": null,
+                "regionIndexCode": "root000000",
+                "status": null,
+                "statusName": null,
+                "transType": 1,
+                "transTypeName": "TCP",
+                "treatyType": null,
+                "treatyTypeName": null,
+                "viewshed": null,
+                "updateTime": "2020-02-06T09:30:11.068+08:00"
+            }
+        ]
+    }
+}
